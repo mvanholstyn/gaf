@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>NSManagedObjectModel_CurrentVersionName</key>
+	<string>MobileGAF</string>
+	<key>NSManagedObjectModel_VersionHashes</key>
+	<dict>
+		<key>MobileGAF</key>
+		<dict>
+			<key>Forum</key>
+			<data>
+			39EtN4h60Y/MgwRPfiDe6GA2oSvcaePmF0FZSO5+qS0=
+			</data>
+			<key>Post</key>
+			<data>
+			Z8ga8vMtz9rJM73LcI9VsUDOEX2losXk/3L6RlxLf9I=
+			</data>
+			<key>Thread</key>
+			<data>
+			b/B06tWPTNBVZN6FskV6jgtWZuolqC/57XGjktDbEXY=
+			</data>
+			<key>User</key>
+			<data>
+			Mb0WQ5+Su4ZK8LdS/MfBxKWFs4GKQOpJpc08UqvBsfk=
+			</data>
+		</dict>
+	</dict>
+</dict>
+</plist>

@@ -1,0 +1,15 @@
+//
+// Prefix header for all source files of the 'MobileGAF' target in the 'MobileGAF' project
+//
+#import <Availability.h>
+
+#ifdef __IPHONE_3_0
+#warning "This project has had all the fun iPhone SDK 3.0 features stripped out. :-/"
+#endif
+
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+    #import <UIKit/UIKit.h>
+//    #import <CoreData/CoreData.h>
+#endif

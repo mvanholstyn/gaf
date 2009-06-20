@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>StringsTable</key>
+	<string>Root</string>
+	<key>PreferenceSpecifiers</key>
+	<array>
+		<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
+			<string>Account</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTextFieldSpecifier</string>
+			<key>Title</key>
+			<string>User Name</string>
+			<key>Key</key>
+			<string>account_name</string>
+			<key>DefaultValue</key>
+			<string></string>
+			<key>IsSecure</key>
+			<false/>
+			<key>KeyboardType</key>
+			<string>Alphabet</string>
+			<key>AutocapitalizationType</key>
+			<string>None</string>
+			<key>AutocorrectionType</key>
+			<string>No</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTextFieldSpecifier</string>
+			<key>Title</key>
+			<string>Password</string>
+			<key>Key</key>
+			<string>account_password</string>
+			<key>DefaultValue</key>
+			<string></string>
+			<key>IsSecure</key>
+			<true/>
+			<key>KeyboardType</key>
+			<string>Alphabet</string>
+			<key>AutocapitalizationType</key>
+			<string>None</string>
+			<key>AutocorrectionType</key>
+			<string>No</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
+			<string>General</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+			<key>Title</key>
+			<string>Show Sticky Threads</string>
+			<key>Key</key>
+			<string>show_sticky_threads</string>
+			<key>DefaultValue</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+			<key>Title</key>
+			<string>Show User Tags</string>
+			<key>Key</key>
+			<string>show_user_tags</string>
+			<key>DefaultValue</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSMultiValueSpecifier</string>
+			<key>Title</key>
+			<string>Scroll to Bottom</string>
+			<key>Key</key>
+			<string>scroll_to_bottom</string>
+			<key>DefaultValue</key>
+			<integer>1</integer>
+			<key>Values</key>
+			<array>
+				<integer>-1</integer>
+				<integer>1</integer>
+				<integer>2</integer>
+			</array>
+			<key>Titles</key>
+			<array>
+				<string>Disabled</string>
+				<string>Single Tap NavBar</string>
+				<string>Double Tap NavBar</string>
+			</array>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
+			<string>Images</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+			<key>Title</key>
+			<string>Load Avatars</string>
+			<key>Key</key>
+			<string>image_avatar</string>
+			<key>DefaultValue</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+			<key>Title</key>
+			<string>Load Images in Posts</string>
+			<key>Key</key>
+			<string>image_post</string>
+			<key>DefaultValue</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSMultiValueSpecifier</string>
+			<key>Title</key>
+			<string>Max Image Size</string>
+			<key>Key</key>
+			<string>image_size_max</string>
+			<key>DefaultValue</key>
+			<integer>800</integer>
+			<key>Values</key>
+			<array>
+				<integer>200</integer>
+				<integer>400</integer>
+				<integer>800</integer>
+				<integer>1200</integer>
+				<integer>2400</integer>
+				<integer>3600</integer>
+			</array>
+			<key>Titles</key>
+			<array>
+				<string>200 KB</string>
+				<string>400 KB</string>
+				<string>800 KB</string>
+				<string>1200 KB</string>
+				<string>2400 KB</string>
+				<string>3600 KB</string>
+			</array>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
+			<string>Appearance</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSMultiValueSpecifier</string>
+			<key>Title</key>
+			<string>Toolbar Color</string>
+			<key>Key</key>
+			<string>toolbar_color</string>
+			<key>DefaultValue</key>
+			<string>orange</string>
+			<key>Values</key>
+			<array>
+				<string>orange</string>
+				<string>blue</string>
+				<string>purple</string>
+				<string>black</string>
+			</array>
+			<key>Titles</key>
+			<array>
+				<string>Orange</string>
+				<string>Blue</string>
+				<string>Purple</string>
+				<string>Black</string>
+			</array>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTitleValueSpecifier</string>
+			<key>Title</key>
+			<string>Toolbar Opacity</string>
+			<key>Key</key>
+			<string>toolbar_opacity_title</string>
+			<key>DefaultValue</key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSSliderSpecifier</string>
+			<key>Key</key>
+			<string>toolbar_opacity_value</string>
+			<key>DefaultValue</key>
+			<real>0.75</real>
+			<key>MinimumValue</key>
+			<real>0.5</real>
+			<key>MaximumValue</key>
+			<integer>1</integer>
+		</dict>
+	</array>
+</dict>
+</plist>
