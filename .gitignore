@@ -1,3 +1,4 @@
 .DS_Store
-/build
+/MobileGAF/build
 /MobileGAF/MobileGAF.xcodeproj/mvanholstyn.*
+/vendor

@@ -13,6 +13,8 @@
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
 		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
+		32F4E77A0FED5D7800EC8EDB /* Three20.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 32F4E7790FED5D7800EC8EDB /* Three20.bundle */; };
+		32F4E7B20FED5DF600EC8EDB /* libThree20.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 32F4E74F0FED5CE200EC8EDB /* libThree20.a */; };
 		EA0284C20FCB06E800148D8E /* smallReplyIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = EA0284C10FCB06E800148D8E /* smallReplyIcon.png */; };
 		EA03F97A0FCA04910012400E /* smallPageIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = EA03F9790FCA04910012400E /* smallPageIcon.png */; };
 		EA03F97C0FCA04B80012400E /* smallAuthorIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = EA03F97B0FCA04B80012400E /* smallAuthorIcon.png */; };
@@ -37,7 +39,6 @@
 		EAA2627B0F76A82000ED4CD4 /* PostHtmlParser.m in Sources */ = {isa = PBXBuildFile; fileRef = EAA2627A0F76A82000ED4CD4 /* PostHtmlParser.m */; };
 		EAA282B10F9BA98000C31065 /* MGStyleSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = EAA282B00F9BA98000C31065 /* MGStyleSheet.m */; };
 		EAA2830C0F9BC1F300C31065 /* UINavigationBarTouchable.m in Sources */ = {isa = PBXBuildFile; fileRef = EAA2830B0F9BC1F300C31065 /* UINavigationBarTouchable.m */; };
-		EAA6B1000FEC152D00E494B7 /* TokenConverterTest.m in Sources */ = {isa = PBXBuildFile; fileRef = EAA6B0FF0FEC152D00E494B7 /* TokenConverterTest.m */; };
 		EAAE081C0FAA8A9700B319F2 /* TTStyledTextAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = EAAE081B0FAA8A9700B319F2 /* TTStyledTextAdditions.m */; };
 		EAAE1C5D0F746D060000A339 /* ForumHtmlParser.m in Sources */ = {isa = PBXBuildFile; fileRef = EAAE1C5C0F746D060000A339 /* ForumHtmlParser.m */; };
 		EAAE1D110F74A0FA0000A339 /* MobileGAF.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EAAE1D100F74A0FA0000A339 /* MobileGAF.xcdatamodeld */; };
@@ -51,8 +52,6 @@
 		EADC187E0FB749BB00F95B29 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = EADC187D0FB749BB00F95B29 /* Settings.bundle */; };
 		EADC18F30FB774B400F95B29 /* Account.m in Sources */ = {isa = PBXBuildFile; fileRef = EADC18F20FB774B400F95B29 /* Account.m */; };
 		EADC1A9C0FBA19F600F95B29 /* UIAlertViewAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = EADC1A9A0FBA19F600F95B29 /* UIAlertViewAdditions.m */; };
-		EADF81E60FAE3A190021F33C /* libThree20.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EADF81DC0FAE3A110021F33C /* libThree20.a */; };
-		EADF81E80FAE3A270021F33C /* Three20.bundle in Resources */ = {isa = PBXBuildFile; fileRef = EADF81E70FAE3A270021F33C /* Three20.bundle */; };
 		EADFD8650FBE6E8400EC3726 /* NSStringAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = EADFD8640FBE6E8400EC3726 /* NSStringAdditions.m */; };
 		EAE3FDBB0F77318C00BF755A /* PostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EAE3FDBA0F77318C00BF755A /* PostCell.m */; };
 		EAE3FDBD0F7731B100BF755A /* PostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAE3FDBC0F7731B100BF755A /* PostCell.xib */; };
@@ -67,18 +66,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		EA2B4AC00FB13AE200ED0CAE /* PBXContainerItemProxy */ = {
+		32F4E74E0FED5CE200EC8EDB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = EADF81D40FAE3A110021F33C /* Three20.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = BEF31F390F352DF5000DE5D2;
+			containerPortal = 32F4E6E90FED579000EC8EDB /* Three20.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BEF31F3A0F352DF5000DE5D2 /* libThree20.a */;
 			remoteInfo = Three20;
 		};
-		EADF81DB0FAE3A110021F33C /* PBXContainerItemProxy */ = {
+		32F4E7500FED5CF100EC8EDB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = EADF81D40FAE3A110021F33C /* Three20.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = BEF31F3A0F352DF5000DE5D2;
+			containerPortal = 32F4E6E90FED579000EC8EDB /* Three20.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = BEF31F390F352DF5000DE5D2 /* Three20 */;
 			remoteInfo = Three20;
 		};
 /* End PBXContainerItemProxy section */
@@ -94,6 +93,8 @@
 		28C3AD890F43EF2300507BA6 /* MobileGAF.xcdatamodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcdatamodel; path = MobileGAF.xcdatamodel; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* MobileGAF_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobileGAF_Prefix.pch; sourceTree = "<group>"; };
+		32F4E6E90FED579000EC8EDB /* Three20.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Three20.xcodeproj; path = ../vendor/three20/src/Three20.xcodeproj; sourceTree = SOURCE_ROOT; };
+		32F4E7790FED5D7800EC8EDB /* Three20.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Three20.bundle; path = ../vendor/three20/src/Three20.bundle; sourceTree = SOURCE_ROOT; };
 		8D1107310486CEB800E47090 /* MobileGAF-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "MobileGAF-Info.plist"; sourceTree = "<group>"; };
 		EA0284C10FCB06E800148D8E /* smallReplyIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = smallReplyIcon.png; sourceTree = "<group>"; };
 		EA03F9790FCA04910012400E /* smallPageIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = smallPageIcon.png; sourceTree = "<group>"; };
@@ -136,8 +137,6 @@
 		EAA282B00F9BA98000C31065 /* MGStyleSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGStyleSheet.m; sourceTree = "<group>"; };
 		EAA2830A0F9BC1F300C31065 /* UINavigationBarTouchable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UINavigationBarTouchable.h; sourceTree = "<group>"; };
 		EAA2830B0F9BC1F300C31065 /* UINavigationBarTouchable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UINavigationBarTouchable.m; sourceTree = "<group>"; };
-		EAA6B0FE0FEC152D00E494B7 /* TokenConverterTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TokenConverterTest.h; sourceTree = "<group>"; };
-		EAA6B0FF0FEC152D00E494B7 /* TokenConverterTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TokenConverterTest.m; sourceTree = "<group>"; };
 		EAAE081A0FAA8A9700B319F2 /* TTStyledTextAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTStyledTextAdditions.h; sourceTree = "<group>"; };
 		EAAE081B0FAA8A9700B319F2 /* TTStyledTextAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTStyledTextAdditions.m; sourceTree = "<group>"; };
 		EAAE1C5B0F746D060000A339 /* ForumHtmlParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForumHtmlParser.h; sourceTree = "<group>"; };
@@ -159,8 +158,6 @@
 		EADC18F20FB774B400F95B29 /* Account.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Account.m; sourceTree = "<group>"; };
 		EADC1A9A0FBA19F600F95B29 /* UIAlertViewAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIAlertViewAdditions.m; sourceTree = "<group>"; };
 		EADC1A9B0FBA19F600F95B29 /* UIAlertViewAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIAlertViewAdditions.h; sourceTree = "<group>"; };
-		EADF81D40FAE3A110021F33C /* Three20.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Three20.xcodeproj; path = ../../../lib/iPhone/three20/src/Three20.xcodeproj; sourceTree = SOURCE_ROOT; };
-		EADF81E70FAE3A270021F33C /* Three20.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Three20.bundle; path = ../../../lib/iPhone/three20/src/Three20.bundle; sourceTree = SOURCE_ROOT; };
 		EADFD8630FBE6E8400EC3726 /* NSStringAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSStringAdditions.h; sourceTree = "<group>"; };
 		EADFD8640FBE6E8400EC3726 /* NSStringAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSStringAdditions.m; sourceTree = "<group>"; };
 		EAE3FDB90F77318C00BF755A /* PostCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostCell.h; sourceTree = "<group>"; };
@@ -190,7 +187,7 @@
 				288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */,
 				EAE589690F792B83002E710D /* libxml2.dylib in Frameworks */,
 				EABD227A0F8D9282003A3690 /* QuartzCore.framework in Frameworks */,
-				EADF81E60FAE3A190021F33C /* libThree20.a in Frameworks */,
+				32F4E7B20FED5DF600EC8EDB /* libThree20.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,8 +222,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
-				EAA6B0FD0FEC150700E494B7 /* Test */,
-				EADF81D40FAE3A110021F33C /* Three20.xcodeproj */,
+				32F4E6E90FED579000EC8EDB /* Three20.xcodeproj */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
@@ -251,9 +247,9 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				32F4E7790FED5D7800EC8EDB /* Three20.bundle */,
 				EA03F9480FC9FEE60012400E /* icons */,
 				EADC187D0FB749BB00F95B29 /* Settings.bundle */,
-				EADF81E70FAE3A270021F33C /* Three20.bundle */,
 				EAFAE9870F7FC4DE00B3E7A3 /* PostCellHeader.xib */,
 				EAAE1D100F74A0FA0000A339 /* MobileGAF.xcdatamodeld */,
 				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
@@ -273,6 +269,14 @@
 				288765A40DF7441C002DB57D /* CoreGraphics.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		32F4E74B0FED5CE200EC8EDB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				32F4E74F0FED5CE200EC8EDB /* libThree20.a */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		EA03F9480FC9FEE60012400E /* icons */ = {
@@ -346,15 +350,6 @@
 			name = Styles;
 			sourceTree = "<group>";
 		};
-		EAA6B0FD0FEC150700E494B7 /* Test */ = {
-			isa = PBXGroup;
-			children = (
-				EAA6B0FE0FEC152D00E494B7 /* TokenConverterTest.h */,
-				EAA6B0FF0FEC152D00E494B7 /* TokenConverterTest.m */,
-			);
-			name = Test;
-			sourceTree = "<group>";
-		};
 		EACDEFE80FCDA446001408AC /* Table Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -387,14 +382,6 @@
 				EA4779780FDDB77E0029D5C5 /* MGWelcomeScreen.m */,
 			);
 			name = "Support UI";
-			sourceTree = "<group>";
-		};
-		EADF81D50FAE3A110021F33C /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				EADF81DC0FAE3A110021F33C /* libThree20.a */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		EAF1FF7A0F7D8DEA009D9E47 /* Model */ = {
@@ -456,7 +443,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				EA2B4AC10FB13AE200ED0CAE /* PBXTargetDependency */,
+				32F4E7510FED5CF100EC8EDB /* PBXTargetDependency */,
 			);
 			name = MobileGAF;
 			productName = MobileGAF;
@@ -475,8 +462,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = EADF81D50FAE3A110021F33C /* Products */;
-					ProjectRef = EADF81D40FAE3A110021F33C /* Three20.xcodeproj */;
+					ProductGroup = 32F4E74B0FED5CE200EC8EDB /* Products */;
+					ProjectRef = 32F4E6E90FED579000EC8EDB /* Three20.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -487,11 +474,11 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		EADF81DC0FAE3A110021F33C /* libThree20.a */ = {
+		32F4E74F0FED5CE200EC8EDB /* libThree20.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = libThree20.a;
-			remoteRef = EADF81DB0FAE3A110021F33C /* PBXContainerItemProxy */;
+			remoteRef = 32F4E74E0FED5CE200EC8EDB /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -506,7 +493,6 @@
 				EAFAE9880F7FC4DE00B3E7A3 /* PostCellHeader.xib in Resources */,
 				EA6CFF380F897C40007CD6C2 /* Icon.png in Resources */,
 				EA11B4BC0FA9324B00C34A69 /* Entitlements.plist in Resources */,
-				EADF81E80FAE3A270021F33C /* Three20.bundle in Resources */,
 				EA327AFD0FAE693C00063ED7 /* replyQuote.png in Resources */,
 				EADC187E0FB749BB00F95B29 /* Settings.bundle in Resources */,
 				EA03F97A0FCA04910012400E /* smallPageIcon.png in Resources */,
@@ -516,6 +502,7 @@
 				EAD6330B0FCDE76C002F9C39 /* defaultAuthorIcon.png in Resources */,
 				EAE57A600FD0784400C3FE4C /* editQuote.png in Resources */,
 				EA9B9CED0FDDE8D7001D68DB /* cogIcon.png in Resources */,
+				32F4E77A0FED5D7800EC8EDB /* Three20.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -561,17 +548,16 @@
 				EAE57C8B0FD10E8E00C3FE4C /* TextEditorParser.m in Sources */,
 				EAE57D270FD1963D00C3FE4C /* EditorController.m in Sources */,
 				EA4779790FDDB77E0029D5C5 /* MGWelcomeScreen.m in Sources */,
-				EAA6B1000FEC152D00E494B7 /* TokenConverterTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		EA2B4AC10FB13AE200ED0CAE /* PBXTargetDependency */ = {
+		32F4E7510FED5CF100EC8EDB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Three20;
-			targetProxy = EA2B4AC00FB13AE200ED0CAE /* PBXContainerItemProxy */;
+			targetProxy = 32F4E7500FED5CF100EC8EDB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -591,7 +577,7 @@
 				GCC_PREFIX_HEADER = MobileGAF_Prefix.pch;
 				HEADER_SEARCH_PATHS = (
 					/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.0.sdk/usr/include/libxml2,
-					../../../lib/iPhone/three20/src/,
+					../vendor/three20/src/,
 				);
 				INFOPLIST_FILE = "MobileGAF-Info.plist";
 				OTHER_LDFLAGS = "-ObjC";
@@ -631,7 +617,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = (
 					/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.0.sdk/usr/include/libxml2,
-					../../../lib/iPhone/three20/src/,
+					vendor/three20/src,
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
