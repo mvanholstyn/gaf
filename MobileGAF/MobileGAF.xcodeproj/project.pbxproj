@@ -370,10 +370,10 @@
 			children = (
 				EAE57D250FD1963D00C3FE4C /* EditorController.h */,
 				EAE57D260FD1963D00C3FE4C /* EditorController.m */,
-				EAA2830A0F9BC1F300C31065 /* UINavigationBarTouchable.h */,
-				EAA2830B0F9BC1F300C31065 /* UINavigationBarTouchable.m */,
 				EAD77C860FBD0F9A0049E711 /* MGMessageController.h */,
 				EAD77C870FBD0F9A0049E711 /* MGMessageController.m */,
+				EAA2830A0F9BC1F300C31065 /* UINavigationBarTouchable.h */,
+				EAA2830B0F9BC1F300C31065 /* UINavigationBarTouchable.m */,
 				EA898B390FBBAEE40021BDB4 /* MGToolbar.h */,
 				EA898B3A0FBBAEE40021BDB4 /* MGToolbar.m */,
 				EA9A017F0FAE14FD0071740B /* MGWebViewController.h */,
