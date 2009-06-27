@@ -23,9 +23,9 @@ module Gaf
     LIST_URL = BASE_URL
     LIST_QUERY = "#collapseobj_forumbit_1 tr"
     URL_QUERY = "td.alt1Active div a[@href^=forumdisplay]"
-    TITLE_QUERY = "#{URL_QUERY} strong"
-    THREADS_COUNT_QUERY = "td:nth-of-type(3)"
-    POSTS_COUNT_QUERY = "td:nth-of-type(4)"
+    NAME_QUERY = "#{URL_QUERY} strong"
+    THREAD_COUNT_QUERY = "td:nth-of-type(3)"
+    POST_COUNT_QUERY = "td:nth-of-type(4)"
 
     attr_accessor :url, :title, :threads_count, :posts_count
 
@@ -37,10 +37,11 @@ module Gaf
       forums = get(url).search(LIST_QUERY)
       forums.map do |forum|
         Forum.new(
+          :uid => "TODO",
           :url => BASE_URL + forum.at(URL_QUERY)['href'],
-          :title => forum.at(TITLE_QUERY).inner_html,
-          :threads_count => forum.at(THREADS_COUNT_QUERY).inner_html.gsub(/[^0-9]/, ''),
-          :posts_count => forum.at(POSTS_COUNT_QUERY).inner_html.gsub(/[^0-9]/, '')
+          :name => forum.at(NAME_QUERY).inner_html,
+          :thread_count => forum.at(THREAD_COUNT_QUERY).inner_html.gsub(/[^0-9]/, ''),
+          :post_count => forum.at(POST_COUNT_QUERY).inner_html.gsub(/[^0-9]/, '')
         )
       end
     end
