@@ -80,11 +80,8 @@ module Gaf
 
     def self.all(forum_id)
       threads = get(LIST_URL % forum_id).search(LIST_QUERY)
-      STDERR.puts("*************URL", LIST_URL % forum_id)
-
       threads.map do |thread|
         next unless thread.at(URL_QUERY)
-
         Thread.new(
           :id => thread.at(URL_QUERY)['href'].match(/t=(\d+)/)[1],
           :forum_id => forum_id,
