@@ -16,10 +16,12 @@
 #import "UINavigationBarTouchable.h"
 #import "LoginRequestDispatcher.h"
 #import "NSObject+ObjectiveResource.h"
+#import "ConnectionManager.h"
 
 @interface RootViewController() 
 
 -(void) resetContent;
+-(void) loadItems;
 
 @end
 
@@ -59,30 +61,46 @@
 	[self updateView];
 }
 
-//Designated method for downloading threads
 -(void) downloadForumsWithCache:(BOOL)useCache {
 	//NSLog(@"Downloading Forums!");
-/*	ObjectiveResource POC //
+	/* - Replacing this all with ObjectiveResource */
+	/*
 	if(forumHtmlParser != nil && forumHtmlParser.loading == YES) {
 		NSLog(@"We're already loading. Cancelling the request to download forums");
 		return;		
 	} 
- */
+
 	[[MG_TOOLBAR itemWithTag:kRefreshTag] setEnabled:NO];
 	if([forumsArray count] == 0) {
 		[self invalidateViewState:TTViewLoading];	
 	}
 		
-//	NSMutableString* url = [[[NSMutableString alloc] initWithString:kNeoGafBaseUrl] autorelease];
-//	[url appendString:kForumPage];
+	NSMutableString* url = [[[NSMutableString alloc] initWithString:kNeoGafBaseUrl] autorelease];
+	[url appendString:kForumPage];
 	
-	NSArray *forums = [Forum findAllRemote];
+	forumHtmlParser = [[ForumHtmlParser alloc] initWithUrl:url delegate:self isCaching:useCache];
+	[forumHtmlParser beginLoadingAndParsing];
+	*/
 	
+	//Disable button, show loading... screen.
+	[[MG_TOOLBAR itemWithTag:kRefreshTag] setEnabled:NO];	
+	[self invalidateViewState:TTViewLoading];	
+	
+	//Kick off an asynchronous load
+	[[ConnectionManager sharedInstance] runJob:@selector(loadItems) onTarget:self];
+}
+
+//Meanwhile, in a network thread.
+-(void) loadItems {	
+	//Synchronously retrieve forums
+	NSArray *forums = [Forum findAllRemote];	
+
+	//Re-enable button, hide loading... screen
+	[self invalidateViewState:TTViewDataLoaded];
+	[[MG_TOOLBAR itemWithTag:kRefreshTag] setEnabled:YES];
+	
+	//Handle results
 	[self handleParseResults:[forums mutableCopy]];
-	
-	//ObjResource test 
-	//forumHtmlParser = [[ForumHtmlParser alloc] initWithUrl:url delegate:self isCaching:useCache];
-	//[forumHtmlParser beginLoadingAndParsing];
 }
 
 -(void) refresh {

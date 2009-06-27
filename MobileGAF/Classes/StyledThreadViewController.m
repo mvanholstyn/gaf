@@ -246,8 +246,7 @@
 	
 	
 	NSLog(@"Downloading Posts!");
-	NSMutableString* url = [[[NSMutableString alloc] initWithString:kNeoGafBaseUrl] autorelease];
-	[url appendString:thread.url];
+	NSMutableString* url = [[[NSMutableString alloc] initWithString:thread.url] autorelease];
 	[url appendString:@"&page="];
 	[url appendString:[NSString stringWithFormat:@"%d",thread.currentPage+1]];
 	

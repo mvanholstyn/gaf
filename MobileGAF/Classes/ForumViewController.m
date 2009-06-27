@@ -16,6 +16,14 @@
 #import "Thread.h"
 #import <Three20/Three20.h>
 #import "UINavigationBarTouchable.h"
+#import "ConnectionManager.h"
+
+@interface ForumViewController()
+
+-(void) loadItems;
+
+@end
+
 
 @implementation ForumViewController
 
@@ -83,28 +91,44 @@
 
 //Designated method for downloading threads.
 -(void)downloadThreadsWithForum:(Forum*)aForum withCache:(BOOL)useCache {
+	/*
 	if(threadHtmlParser != nil && threadHtmlParser.loading == YES) {
 		NSLog(@"We're already loading. Cancelling the request to download threads");
 		return;		
 	}
-	UIBarButtonItem *refreshButton = [MG_TOOLBAR itemWithTag:kRefreshTag];
-	[refreshButton setEnabled:NO];
 	
-	[self setForum:aForum];		
-	[self setAdjustingFontOnNavigationItemWithTitle:forum.name];
-	
-	//NSLog(@"Downloading Threads!");
+	NSLog(@"Downloading Threads!");
 	NSMutableString* url = [aForum.url mutableCopy];
 	[url appendString:[NSString stringWithFormat:@"&page=%d&order=desc",pageCountInView]];			
-	NSArray *threads = [Thread findAllForForumWithId:aForum.forumId];
 	
-	[self handleParseResults:[threads mutableCopy]];
+	threadHtmlParser = [[ThreadHtmlParser alloc] initWithUrl:url delegate:self isCaching:useCache];
+	[threadHtmlParser beginLoadingAndParsing];
+	*/
 	
-	//ObjResource
-	//threadHtmlParser = [[ThreadHtmlParser alloc] initWithUrl:url delegate:self isCaching:useCache];
-	//[threadHtmlParser beginLoadingAndParsing];
+	//Set forum
+	[self setForum:aForum];		
+	[self setAdjustingFontOnNavigationItemWithTitle:forum.name];
+
+	//Disable button, show loading... screen.
+	[[MG_TOOLBAR itemWithTag:kRefreshTag] setEnabled:NO];	
+	[self invalidateViewState:TTViewLoading];	
+	
+	//Kick off an asynchronous load
+	[[ConnectionManager sharedInstance] runJob:@selector(loadItems) onTarget:self];
 }
 
+//Meanwhile, in a network thread.
+-(void) loadItems {	
+	//Synchronously retrieve threads
+	NSArray *threads = [Thread findAllForForumWithId:forum.forumId];
+	
+	//Re-enable button, hide loading... screen
+	[self invalidateViewState:TTViewDataLoaded];
+	[[MG_TOOLBAR itemWithTag:kRefreshTag] setEnabled:YES];
+	
+	//Handle results
+	[self handleParseResults:[threads mutableCopy]];
+}
 
 #pragma mark -
 #pragma mark HtmlParserDelegate Methods
