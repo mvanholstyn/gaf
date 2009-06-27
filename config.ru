@@ -19,8 +19,4 @@ get '/forums/:forum_id/threads/:thread_id/posts.json' do
   posts.to_json
 end
 
-get '/test' do
-  Gaf::Thread.response(params[:forum_id])
-end
-
 run Sinatra::Application

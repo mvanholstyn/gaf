@@ -95,11 +95,6 @@ module Gaf
         )
       end.compact
     end
-    
-    def self.response(forum_id)
-      threads = get(LIST_URL % forum_id).search(LIST_QUERY)
-      threads.second.at(URL_QUERY).to_s
-    end
   end
 
   class Post < Base
