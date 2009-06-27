@@ -52,7 +52,7 @@ module Gaf
       forums = get(url).search(LIST_QUERY)
       forums.map do |forum|
         Forum.new(
-          :uid => "TODO",
+          :uid => forum.at(URL_QUERY)['href'].gsub(/^.*?f=(\d+)$/, '\1'),
           :url => BASE_URL + forum.at(URL_QUERY)['href'],
           :name => forum.at(NAME_QUERY).inner_html,
           :thread_count => forum.at(THREAD_COUNT_QUERY).inner_html.gsub(/[^0-9]/, ''),
