@@ -81,8 +81,6 @@ module Gaf
     def self.all(forum_id)
       threads = get(LIST_URL % forum_id).search(LIST_QUERY)
       STDERR.puts("*************URL", LIST_URL % forum_id)
-      STDERR.puts("*************RESPONSE", get(LIST_URL % forum_id))
-      STDERR.puts("*************THREADS", threads)
 
       threads.map do |thread|
         next unless thread.at(URL_QUERY)
