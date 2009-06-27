@@ -55,8 +55,8 @@ module Gaf
           :id => forum.at(URL_QUERY)['href'].match(/f=(\d+)/)[1],
           :url => BASE_URL + forum.at(URL_QUERY)['href'],
           :name => forum.at(NAME_QUERY).inner_html,
-          :thread_count => forum.at(THREAD_COUNT_QUERY).inner_html.gsub(/[^0-9]/, ''),
-          :post_count => forum.at(POST_COUNT_QUERY).inner_html.gsub(/[^0-9]/, '')
+          :thread_count => forum.at(THREAD_COUNT_QUERY).inner_html,
+          :post_count => forum.at(POST_COUNT_QUERY).inner_html
         )
       end
     end
