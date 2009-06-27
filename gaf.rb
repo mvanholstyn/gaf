@@ -92,6 +92,7 @@ module Gaf
           :reply_count => thread.at(REPLY_COUNT_QUERY).inner_html,
           :sticky => thread.at(STICKY_QUERY).inner_html =~ /Sticky/ ? true : false
         )
+        1
       end.compact
     end
     
