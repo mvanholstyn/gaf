@@ -97,7 +97,7 @@ module Gaf
     
     def self.response(forum_id)
       LIST_URL % forum_id
-      # get(LIST_URL % forum_id)
+      get(LIST_URL % forum_id)
       # get(LIST_URL % forum_id).search(LIST_QUERY)
     end
   end
