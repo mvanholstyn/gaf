@@ -65,7 +65,8 @@ module Gaf
   class Thread < Base
     LIST_URL = BASE_URL + 'forumdisplay.php?f=%d'
     LIST_QUERY = "#threadslist tr"
-    URL_QUERY = "td[@id^=td_title] div a[@href^=showthread]"
+    # URL_QUERY = "td[@id^=td_title] div a[@href^=showthread]"
+    URL_QUERY = "td:nth-of-type(1) div a[@href^=showthread]"
     TITLE_QUERY = URL_QUERY
     AUTHOR_NAME_QUERY = "td:nth-of-type(2) a[@href^=member]"
     REPLIER_NAME_QUERY = "td:nth-of-type(3) a[@href^=member]"
