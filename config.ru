@@ -9,7 +9,7 @@ end
 
 # http://localhost:4567/forums/2/threads
 get '/forums/:forum_id/threads.json' do
-  threads = Gaf::Thread.all("http://www.neogaf.com/forum/forumdisplay.php?f=#{params[:forum_id]}")
+  threads = Gaf::Thread.all(params[:forum_id])
   threads.to_json
 end
 

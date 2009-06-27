@@ -45,14 +45,14 @@ module Gaf
     attr_accessor :id, :url, :name, :thread_count, :post_count
 
     def threads
-      @threads ||= Thread.all(url)
+      @threads ||= Thread.all(id)
     end
 
-    def self.all(url = LIST_URL)
-      forums = get(url).search(LIST_QUERY)
+    def self.all
+      forums = get(LIST_URL).search(LIST_QUERY)
       forums.map do |forum|
         Forum.new(
-          :id => forum.at(URL_QUERY)['href'].gsub(/^.*?f=(\d+)$/, '\1'),
+          :id => forum.at(URL_QUERY)['href'].match(/f=(\d+)/)[1],
           :url => BASE_URL + forum.at(URL_QUERY)['href'],
           :name => forum.at(NAME_QUERY).inner_html,
           :thread_count => forum.at(THREAD_COUNT_QUERY).inner_html.gsub(/[^0-9]/, ''),
@@ -63,28 +63,35 @@ module Gaf
   end
 
   class Thread < Base
+    LIST_URL = BASE_URL + 'forumdisplay.php?f=%d'
     LIST_QUERY = "#threadslist tr"
     URL_QUERY = "td[@id^=td_title] div a[@href^=showthread]"
     TITLE_QUERY = URL_QUERY
-    FIRST_POSTER_QUERY = "td:nth-of-type(2) a[@href^=member]"
-    LAST_POSTER_QUERY = "td:nth-of-type(3) a[@href^=member]"
+    AUTHOR_NAME_QUERY = "td:nth-of-type(2) a[@href^=member]"
+    REPLIER_NAME_QUERY = "td:nth-of-type(3) a[@href^=member]"
+    REPLY_COUNT_QUERY = "td:nth-of-type(4) a"
+    STICKY_QUERY = "td:nth-of-type(1) div"
 
-    attr_accessor :url, :title, :first_poster, :last_poster
+    attr_accessor :id, :forum_id, :url, :title, :author_name, :replier_name, :reply_count, :sticky
 
     def posts
       @posts ||= Post.all(url)
     end
 
-    def self.all(url)
-      threads = get(url).search(LIST_QUERY)
+    def self.all(forum_id)
+      threads = get(LIST_URL % forum_id).search(LIST_QUERY)
       threads.map do |thread|
         next unless thread.at(URL_QUERY)
 
         Thread.new(
+          :id => thread.at(URL_QUERY)['href'].match(/t=(\d+)/)[1],
+          :forum_id => forum_id,
           :url => BASE_URL + thread.at(URL_QUERY)['href'],
           :title => thread.at(TITLE_QUERY).inner_html,
-          :first_poster => thread.at(FIRST_POSTER_QUERY).inner_html,
-          :last_poster => thread.at(LAST_POSTER_QUERY).inner_html
+          :author_name => thread.at(AUTHOR_NAME_QUERY).inner_html,
+          :replier_name => thread.at(REPLIER_NAME_QUERY).inner_html,
+          :reply_count => thread.at(REPLY_COUNT_QUERY).inner_html,
+          :sticky => thread.at(STICKY_QUERY).inner_html =~ /Sticky/ ? true : false
         )
       end.compact
     end
