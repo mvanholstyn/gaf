@@ -13,6 +13,21 @@ module Gaf
       end
     end
 
+    def attributes
+      instance_variables.inject({}) do |hash, instance_variable|
+        hash[instance_variable[1..-1]] = instance_variable_get(instance_variable)
+        hash
+      end
+    end
+
+    def to_json(*args)
+      "{#{self.class.json_class_name}: #{attributes.to_json(*args )}}"
+    end
+
+    def self.json_class_name
+      @json_class_name ||= name.demodulize.underscore.inspect
+    end
+
   private
     def self.get(url)
       Hpricot(open(url).read)
