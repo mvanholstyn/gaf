@@ -11,7 +11,8 @@
 
 @implementation Forum 
 
-@synthesize uid;
+@synthesize forumId;
+//@synthesize uid;
 @synthesize postCount;
 @synthesize url;
 @synthesize name;
@@ -23,7 +24,7 @@
 - (void)dealloc {
 	[name release];
 	[url release];	
-	[uid release];
+	[forumId release];
 	[super dealloc];
 }
 

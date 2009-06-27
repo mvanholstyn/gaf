@@ -58,7 +58,7 @@
 - (void)parseModelObjects:(NSData*)someData {
 	NSLog(@"Parsing Posts w/ STYLE");	
 
-	NSString *html = [[[NSString alloc] initWithData:someData encoding:NSISOLatin1StringEncoding] autorelease]; 
+	//NSString *html = [[[NSString alloc] initWithData:someData encoding:NSISOLatin1StringEncoding] autorelease]; 
 	//NSLog(@"HTML of page %@",html);
 	
 	[self updatePageCountIfNecessary:someData];

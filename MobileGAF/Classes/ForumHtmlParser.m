@@ -39,7 +39,7 @@
 		[forum setUrl:[(NSDictionary*)[(NSArray*)[node objectForKey:@"nodeAttributeArray"] objectAtIndex:0] objectForKey:@"nodeContent"]];
 		
 		NSRange fRange = [forum.url rangeOfString:@"f="];
-		[forum setUid:[forum.url substringFromIndex:(fRange.location+fRange.length)]];
+		[forum setForumId:[forum.url substringFromIndex:(fRange.location+fRange.length)]];
 		
 		[forum setName:[(NSDictionary*)[(NSArray*)[node objectForKey:@"nodeChildArray"] objectAtIndex:0] objectForKey:@"nodeContent"]];
 		

@@ -51,7 +51,7 @@
 		
 		//Everything after the '=' sign is the ID.
 		NSRange idRange = [thread.url rangeOfString:@"="];
-		[thread setUid:[thread.url substringFromIndex:(idRange.length+idRange.location)]];
+		[thread setThreadId:[thread.url substringFromIndex:(idRange.length+idRange.location)]];
 
 		//Set stickiness
 		if([[threadTitleDiv retrieveTextUpToDepth:1] rangeOfString:@"Sticky"].location != NSNotFound) {

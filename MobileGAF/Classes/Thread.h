@@ -12,9 +12,10 @@
 
 @interface Thread : NSObject //NSManagedObject  
 {
+	
 	NSString * title;
 	NSString * url;
-	NSString * uid;
+	NSString * threadId;
 	Forum * forum;
 	
 	NSUInteger currentPage;
@@ -33,12 +34,15 @@
 @property NSUInteger currentPage;
 @property NSUInteger pageCount;
 @property BOOL sticky;
-@property (nonatomic, retain) NSString *uid;
+@property (nonatomic, retain) NSString *threadId;
 @property (retain) NSString * title;
 @property (retain) NSString * url;
 @property (retain) Forum * forum;
 
++ (NSArray *)findAllForForumWithId:(NSString *)forumId;
+
 @end
+
 
 
 

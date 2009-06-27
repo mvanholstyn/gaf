@@ -15,6 +15,7 @@
 #import "Account.h"
 #import "UINavigationBarTouchable.h"
 #import "LoginRequestDispatcher.h"
+#import "NSObject+ObjectiveResource.h"
 
 @interface RootViewController() 
 
@@ -61,21 +62,27 @@
 //Designated method for downloading threads
 -(void) downloadForumsWithCache:(BOOL)useCache {
 	//NSLog(@"Downloading Forums!");
+/*	ObjectiveResource POC //
 	if(forumHtmlParser != nil && forumHtmlParser.loading == YES) {
 		NSLog(@"We're already loading. Cancelling the request to download forums");
 		return;		
-	}
+	} 
+ */
 	[[MG_TOOLBAR itemWithTag:kRefreshTag] setEnabled:NO];
 	if([forumsArray count] == 0) {
 		[self invalidateViewState:TTViewLoading];	
 	}
+		
+//	NSMutableString* url = [[[NSMutableString alloc] initWithString:kNeoGafBaseUrl] autorelease];
+//	[url appendString:kForumPage];
 	
+	NSArray *forums = [Forum findAllRemote];
 	
-	NSMutableString* url = [[[NSMutableString alloc] initWithString:kNeoGafBaseUrl] autorelease];
-	[url appendString:kForumPage];
+	[self handleParseResults:[forums mutableCopy]];
 	
-	forumHtmlParser = [[ForumHtmlParser alloc] initWithUrl:url delegate:self isCaching:useCache];
-	[forumHtmlParser beginLoadingAndParsing];
+	//ObjResource test 
+	//forumHtmlParser = [[ForumHtmlParser alloc] initWithUrl:url delegate:self isCaching:useCache];
+	//[forumHtmlParser beginLoadingAndParsing];
 }
 
 -(void) refresh {

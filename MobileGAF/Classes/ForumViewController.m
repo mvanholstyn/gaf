@@ -78,7 +78,7 @@
 	return nil;
 }
 - (NSDictionary*)submissionParamsForCreateOrReply {
-	return [NSDictionary dictionaryWithObject:forum.uid forKey:@"f"];	
+	return [NSDictionary dictionaryWithObject:forum.forumId forKey:@"f"];	
 }
 
 //Designated method for downloading threads.
@@ -94,12 +94,15 @@
 	[self setAdjustingFontOnNavigationItemWithTitle:forum.name];
 	
 	//NSLog(@"Downloading Threads!");
-	NSMutableString* url = [[[NSMutableString alloc] initWithString:kNeoGafBaseUrl] autorelease];
-	[url appendString:forum.url];
-	[url appendString:[NSString stringWithFormat:@"&page=%d&order=desc",pageCountInView]];		
+	NSMutableString* url = [aForum.url mutableCopy];
+	[url appendString:[NSString stringWithFormat:@"&page=%d&order=desc",pageCountInView]];			
+	NSArray *threads = [Thread findAllForForumWithId:aForum.forumId];
 	
-	threadHtmlParser = [[ThreadHtmlParser alloc] initWithUrl:url delegate:self isCaching:useCache];
-	[threadHtmlParser beginLoadingAndParsing];
+	[self handleParseResults:[threads mutableCopy]];
+	
+	//ObjResource
+	//threadHtmlParser = [[ThreadHtmlParser alloc] initWithUrl:url delegate:self isCaching:useCache];
+	//[threadHtmlParser beginLoadingAndParsing];
 }
 
 
@@ -121,7 +124,7 @@
 		//Only bother to check if we're past the first page.
 		if(pageCountInView > 1) {
 			for(Thread *existingThread in threadsArray) {
-				if([thread.uid isEqualToString:existingThread.uid]) {
+				if([thread.threadId isEqualToString:existingThread.threadId]) {
 					//NSLog(@"Duplicate thread found, skipping it. Title: %@",thread.title);
 					threadAlreadyExists = YES;
 					
@@ -216,7 +219,7 @@
 		
 		//Reset if necessary
 		Thread *selThread = (Thread*)[threadsArray objectAtIndex:indexPath.row];
-		if(![selThread.uid isEqualToString:self.threadViewController.thread.uid]) {
+		if(![selThread.threadId isEqualToString:self.threadViewController.thread.threadId]) {
 			//User switched threads. Let's clear out the gunk.
 			[self.threadViewController setThread:selThread];
 			[self.threadViewController resetContent];

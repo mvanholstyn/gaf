@@ -11,20 +11,23 @@
 
 @interface Forum :  NSObject //NSManagedObject  
 {
-	NSString * postCount;
+	NSString * forumId;
 	NSString * url;
-	NSString * uid;
+//	NSString * uid;
 	NSString * name;
 	NSString * threadCount;
+	NSString * postCount;	
 }
 
-@property (nonatomic, retain) NSString *uid;
+@property (nonatomic, retain) NSString *forumId;
+//@property (nonatomic, retain) NSString *uid;
 @property (retain) NSString * postCount;
 @property (retain) NSString * url;
 @property (retain) NSString * name;
 @property (retain) NSString * threadCount;
 
 @end
+
 
 
 

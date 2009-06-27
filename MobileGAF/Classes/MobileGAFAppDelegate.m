@@ -16,6 +16,7 @@
 #import "MGToolbar.h"
 #import "UINavigationBarTouchable.h"
 #import "MGToolbar.h"
+#import "ObjectiveResourceConfig.h"
 #import <Three20/Three20.h>
 
 @interface MobileGAFAppDelegate()
@@ -24,6 +25,7 @@
 - (void)setupUserConfiguration;
 - (void)setupToolbar;
 - (void)clearAllCaches;
+- (void)setupObjectiveResource;
 
 @end
 
@@ -41,6 +43,18 @@
 
 #pragma mark -
 #pragma mark MobileGAFAppDelegate
+
+- (void)setupObjectiveResource {
+	//Set the address of the rails site. The trailing slash is required
+	[ObjectiveResourceConfig setSite:@"http://gaf.heroku.com/"];
+	
+	//Set the username and password to be used for the remote site
+//	[ObjectiveResourceConfig setUser:@"remoteResourceUserName"];
+//	[ObjectiveResourceConfig setPassword:@"remoteResourcePassword"];
+	
+	//Set ObjectiveResource to use either XML or JSON
+	[ObjectiveResourceConfig setResponseType:JSONResponse];
+}
 
 - (void)setupUserConfiguration {
 	NSUserDefaults *settings = [NSUserDefaults standardUserDefaults];
@@ -95,11 +109,13 @@
 		//[UIAlertView debugAlertWithMessage:@"NSZombieEnabled/NSAutoreleaseFreedObjectCheckEnabled enabled!"];
 	}	
 
+	//load user conf
+	[self setupUserConfiguration];
+	
 	//Set our style sheet
 	[TTStyleSheet setGlobalStyleSheet:[[[MGStyleSheet alloc] init] autorelease]];	
 	
-	//load user conf
-	[self setupUserConfiguration];
+	[self setupObjectiveResource];
 	
 	//Set our custom touchable navbar.
 	[self.navigationController setNavigationBar:[[[UINavigationBarTouchable alloc] init] autorelease]];

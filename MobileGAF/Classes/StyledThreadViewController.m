@@ -100,7 +100,7 @@
 }
 - (NSDictionary*)submissionParamsForCreateOrReply {	
 	return [NSDictionary dictionaryWithObjectsAndKeys:
-			thread.uid,@"t",
+			thread.threadId,@"t",
 			[(Post*)[postsArray lastObject] uid],@"p",
 			nil];
 }
