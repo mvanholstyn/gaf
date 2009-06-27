@@ -27,7 +27,7 @@ module Gaf
     THREAD_COUNT_QUERY = "td:nth-of-type(3)"
     POST_COUNT_QUERY = "td:nth-of-type(4)"
 
-    attr_accessor :url, :title, :threads_count, :posts_count
+    attr_accessor :uid, :url, :name, :thread_count, :post_count
 
     def threads
       @threads ||= Thread.all(url)
