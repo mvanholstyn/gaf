@@ -81,25 +81,25 @@ module Gaf
     def self.all(forum_id)
       threads = get(LIST_URL % forum_id).search(LIST_QUERY)
       threads.map do |thread|
-        # next unless thread.at(URL_QUERY)
-        # Thread.new(
-        #   :id => thread.at(URL_QUERY)['href'].match(/t=(\d+)/)[1],
-        #   :forum_id => forum_id,
-        #   :url => BASE_URL + thread.at(URL_QUERY)['href'],
-        #   :title => thread.at(TITLE_QUERY).inner_html,
-        #   :author_name => thread.at(AUTHOR_NAME_QUERY).inner_html,
-        #   :replier_name => thread.at(REPLIER_NAME_QUERY).inner_html,
-        #   :reply_count => thread.at(REPLY_COUNT_QUERY).inner_html,
-        #   :sticky => thread.at(STICKY_QUERY).inner_html =~ /Sticky/ ? true : false
-        # )
-        1
+        next unless thread.at(URL_QUERY)
+        Thread.new(
+          :id => thread.at(URL_QUERY)['href'].match(/t=(\d+)/)[1],
+          :forum_id => forum_id,
+          :url => BASE_URL + thread.at(URL_QUERY)['href'],
+          :title => thread.at(TITLE_QUERY).inner_html,
+          :author_name => thread.at(AUTHOR_NAME_QUERY).inner_html,
+          :replier_name => thread.at(REPLIER_NAME_QUERY).inner_html,
+          :reply_count => thread.at(REPLY_COUNT_QUERY).inner_html,
+          :sticky => thread.at(STICKY_QUERY).inner_html =~ /Sticky/ ? true : false
+        )
       end.compact
     end
     
     def self.response(forum_id)
-      LIST_URL % forum_id
-      get(LIST_URL % forum_id).to_s
-      get(LIST_URL % forum_id).search(LIST_QUERY).to_s
+      threads = get(LIST_URL % forum_id).search(LIST_QUERY)
+      threads.map do |thread|
+        thread.at(URL_QUERY).to_s
+      end
     end
   end
 
