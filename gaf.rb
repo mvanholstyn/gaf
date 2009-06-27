@@ -97,9 +97,7 @@ module Gaf
     
     def self.response(forum_id)
       threads = get(LIST_URL % forum_id).search(LIST_QUERY)
-      threads.map do |thread|
-        thread.at(URL_QUERY).to_s
-      end
+      threads.second.to_s
     end
   end
 
