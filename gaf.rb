@@ -94,6 +94,12 @@ module Gaf
         )
       end.compact
     end
+    
+    def self.response(forum_id)
+      LIST_URL % forum_id
+      # get(LIST_URL % forum_id)
+      # get(LIST_URL % forum_id).search(LIST_QUERY)
+    end
   end
 
   class Post < Base
