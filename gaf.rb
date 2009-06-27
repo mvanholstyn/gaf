@@ -42,7 +42,7 @@ module Gaf
     THREAD_COUNT_QUERY = "td:nth-of-type(3)"
     POST_COUNT_QUERY = "td:nth-of-type(4)"
 
-    attr_accessor :uid, :url, :name, :thread_count, :post_count
+    attr_accessor :id, :url, :name, :thread_count, :post_count
 
     def threads
       @threads ||= Thread.all(url)
@@ -52,7 +52,7 @@ module Gaf
       forums = get(url).search(LIST_QUERY)
       forums.map do |forum|
         Forum.new(
-          :uid => forum.at(URL_QUERY)['href'].gsub(/^.*?f=(\d+)$/, '\1'),
+          :id => forum.at(URL_QUERY)['href'].gsub(/^.*?f=(\d+)$/, '\1'),
           :url => BASE_URL + forum.at(URL_QUERY)['href'],
           :name => forum.at(NAME_QUERY).inner_html,
           :thread_count => forum.at(THREAD_COUNT_QUERY).inner_html.gsub(/[^0-9]/, ''),
