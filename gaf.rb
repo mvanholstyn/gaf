@@ -90,7 +90,7 @@ module Gaf
           :title => thread.at(TITLE_QUERY).inner_html,
           :author_name => thread.at(AUTHOR_NAME_QUERY).inner_html,
           :replier_name => thread.at(REPLIER_NAME_QUERY).inner_html,
-          :reply_count => thread.at(REPLY_COUNT_QUERY).inner_html
+          :reply_count => thread.at(REPLY_COUNT_QUERY).inner_html,
           :sticky => thread.at(STICKY_QUERY).inner_html =~ /Sticky/ ? true : false
         )
       end.compact
